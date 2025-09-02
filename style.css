@@ -1,0 +1,158 @@
+/* ===============================
+   Bagian CSS untuk Aplikasi Agenda Kelas
+   File: style.css
+   =============================== */
+
+/* Reset bawaan browser agar tampilan lebih konsisten */
+* {
+  margin: 0;           /* Menghilangkan margin default */
+  padding: 0;          /* Menghilangkan padding default */
+  box-sizing: border-box; /* Supaya ukuran elemen lebih mudah diatur */
+  font-family: Arial, sans-serif; /* Gunakan font umum agar mudah dibaca */
+}
+
+/* Styling umum untuk body (halaman utama) */
+body {
+  background-color: #f4f6f9; /* Warna abu-abu muda sebagai latar */
+  color: #333;              /* Warna teks default */
+  padding: 20px;            /* Beri jarak isi dari pinggir layar */
+}
+
+/* Header judul aplikasi */
+header {
+  text-align: center;        /* Judul ditengah */
+  margin-bottom: 20px;       /* Beri jarak ke bawah */
+}
+
+header h1 {
+  font-size: 28px;           /* Ukuran huruf besar */
+  color: #2c3e50;            /* Warna teks biru gelap */
+}
+
+/* Navigasi tab (Agenda, Absensi, Catatan, Jadwal, Modul) */
+nav {
+  display: flex;              /* Atur tab secara horizontal */
+  justify-content: center;    /* Letakkan tab di tengah */
+  margin-bottom: 20px;        /* Jarak ke bawah */
+}
+
+/* Tombol tab */
+nav button {
+  background-color: #3498db;  /* Biru cerah */
+  color: white;              /* Teks putih */
+  border: none;              /* Hilangkan border */
+  padding: 10px 15px;        /* Ruang dalam tombol */
+  margin: 0 5px;             /* Jarak antar tombol */
+  border-radius: 5px;        /* Sudut melengkung */
+  cursor: pointer;           /* Cursor tangan saat diarahkan */
+  transition: background-color 0.3s; /* Animasi saat hover */
+}
+
+/* Efek hover untuk tombol tab */
+nav button:hover {
+  background-color: #2980b9;  /* Biru lebih gelap saat diarahkan */
+}
+
+/* Konten tab (setiap fitur) */
+.tab-content {
+  display: none;              /* Semua tab disembunyikan dulu */
+  background: white;          /* Latar putih untuk isi */
+  padding: 20px;              /* Ruang dalam */
+  border-radius: 8px;         /* Sudut melengkung */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+/* Tab yang aktif */
+.tab-content.active {
+  display: block;             /* Tab ditampilkan */
+}
+
+/* Input teks */
+input[type="text"], input[type="file"], select, textarea {
+  padding: 8px;               /* Ruang dalam */
+  margin: 5px 0;              /* Jarak antar elemen */
+  border: 1px solid #ccc;     /* Garis abu-abu */
+  border-radius: 5px;         /* Sudut melengkung */
+  width: 100%;                /* Lebar penuh container */
+  max-width: 400px;           /* Tapi dibatasi agar tidak terlalu lebar */
+}
+
+/* Tombol umum di dalam tab */
+button {
+  background-color: #2ecc71;  /* Hijau */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efek hover untuk tombol umum */
+button:hover {
+  background-color: #27ae60;  /* Hijau lebih gelap saat hover */
+}
+
+/* Daftar agenda (ul > li) */
+#agendaList li {
+  margin: 5px 0;             /* Jarak antar item */
+  padding: 8px;
+  background: #ecf0f1;       /* Abu-abu terang */
+  border-radius: 5px;
+  display: flex;             /* Agar teks dan tombol hapus sejajar */
+  justify-content: space-between; /* Teks di kiri, tombol di kanan */
+}
+
+/* Tombol hapus kecil di agenda */
+.delete-btn {
+  background-color: #e74c3c;  /* Merah */
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Efek hover untuk tombol hapus */
+.delete-btn:hover {
+  background-color: #c0392b;  /* Merah lebih gelap */
+}
+
+/* Tabel untuk absensi dan jadwal */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* Hilangkan jarak antar border */
+  margin-top: 10px;
+}
+
+/* Border dan padding sel tabel */
+table, th, td {
+  border: 1px solid #ccc;     /* Garis abu-abu */
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;         /* Isi ditengah */
+}
+
+/* Judul tab (h2) */
+h2 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Catatan Guru (textarea) */
+#catatanGuru {
+  width: 100%;
+  height: 100px;
+  resize: vertical;           /* Bisa diubah tinggi (vertikal) */
+}
+
+/* Daftar modul yang diupload */
+#modulList li {
+  margin: 5px 0;
+  padding: 8px;
+  background: #ecf0f1;
+  border-radius: 5px;
+}

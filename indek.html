@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html> adalah deklarasi standar bahwa dokumen ini adalah HTML5 -->
+
+<html lang="id">
+<!-- Tag <html> adalah root dari dokumen HTML, lang="id" artinya bahasa Indonesia -->
+
+<head>
+  <!-- <head> berisi informasi metadata untuk browser, bukan isi yang ditampilkan -->
+
+  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8"> memastikan teks mendukung semua karakter, termasuk huruf Indonesia -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Agar tampilan responsive di HP (skala 1.0 berarti normal, tidak diperbesar) -->
+
+  <title>Aplikasi Agenda Kelas 11 RPL</title>
+  <!-- Judul halaman yang muncul di tab browser -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Menghubungkan file CSS eksternal bernama style.css -->
+</head>
+
+<body>
+  <!-- Bagian isi utama yang akan terlihat di layar -->
+
+  <h1>📚 Aplikasi Agenda Kelas 11 RPL</h1>
+  <!-- Judul utama aplikasi -->
+
+  <!-- Navigasi Tab -->
+  <div class="tabs">
+    <!-- Tombol-tombol navigasi -->
+    <button class="tab-button active" onclick="openTab('agendaTab')">Agenda</button>
+    <button class="tab-button" onclick="openTab('absenTab')">Absensi</button>
+    <button class="tab-button" onclick="openTab('catatanTab')">Catatan Guru</button>
+    <button class="tab-button" onclick="openTab('jadwalTab')">Jadwal</button>
+    <button class="tab-button" onclick="openTab('modulTab')">Modul</button>
+  </div>
+
+  <!-- Tab 1: Agenda -->
+  <div id="agendaTab" class="tab-content active">
+    <h2>📝 Agenda Kelas</h2>
+    <input type="text" id="agendaInput" placeholder="Masukkan agenda kelas...">
+    <button onclick="tambahAgenda()">Tambah Agenda</button>
+    <button onclick="exportAgendaCSV()">Export Agenda (CSV)</button>
+    <ul id="agendaList"></ul>
+    <!-- <ul> digunakan untuk menampilkan daftar agenda -->
+  </div>
+
+  <!-- Tab 2: Absensi -->
+  <div id="absenTab" class="tab-content">
+    <h2>✅ Absensi Siswa</h2>
+    <select id="siswaSelect">
+      <option value="">-- Pilih Nama Siswa --</option>
+      <option>Andi</option>
+      <option>Budi</option>
+      <option>Citra</option>
+      <option>Dewi</option>
+      <option>Erik</option>
+    </select>
+    <select id="statusSelect">
+      <option value="">-- Pilih Status --</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Izin">Izin</option>
+      <option value="Alpha">Alpha</option>
+    </select>
+    <button onclick="tandaiAbsen()">Simpan Absen</button>
+    <button onclick="exportAbsensiCSV()">Export Absensi (CSV)</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Siswa</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="absenList"></tbody>
+    </table>
+  </div>
+
+  <!-- Tab 3: Catatan Guru -->
+  <div id="catatanTab" class="tab-content">
+    <h2>🖊️ Catatan Guru</h2>
+    <textarea id="catatanInput" placeholder="Tulis catatan guru di sini..."></textarea>
+    <br>
+    <button onclick="simpanCatatan()">Simpan Catatan</button>
+    <p><strong>Catatan Tersimpan:</strong></p>
+    <p id="catatanDisplay"></p>
+  </div>
+
+  <!-- Tab 4: Jadwal -->
+  <div id="jadwalTab" class="tab-content">
+    <h2>📅 Jadwal Pelajaran Mingguan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Hari</th>
+          <th>Mata Pelajaran</th>
+        </tr>
+      </thead>
+      <tbody id="jadwalTable">
+        <tr>
+          <td>Senin</td>
+          <td contenteditable="true">-</td>
+        </tr>
+        <tr>
+          <td>Selasa</td>
+          <td contenteditable="true">-</td>
+        </tr>
+        <tr>
+          <td>Rabu</td>
+          <td contenteditable="true">-</td>
+        </tr>
+        <tr>
+          <td>Kamis</td>
+          <td contenteditable="true">-</td>
+        </tr>
+        <tr>
+          <td>Jumat</td>
+          <td contenteditable="true">-</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="simpanJadwal()">Simpan Jadwal</button>
+  </div>
+
+  <!-- Tab 5: Modul -->
+  <div id="modulTab" class="tab-content">
+    <h2>📂 Upload Modul</h2>
+    <input type="file" id="modulInput">
+    <button onclick="uploadModul()">Upload</button>
+    <ul id="modulList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Menghubungkan file JavaScript eksternal -->
+</body>
+
+</html>
